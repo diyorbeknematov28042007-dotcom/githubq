@@ -33,6 +33,7 @@
 .hero-actions{animation-delay:1.16s;animation-duration:.7s}
 .hero-card{opacity:0;animation:card-enter .75s cubic-bezier(.18,.7,.2,1) forwards}
 .hero-card:nth-child(1){animation-delay:1.34s}.hero-card:nth-child(2){animation-delay:1.48s}.hero-card:nth-child(3){animation-delay:1.62s}
+.hero-card:hover{animation:none;opacity:1}
 .hero-bottom{animation:copy-enter .8s ease-out 1.85s both}
 @keyframes title-enter{to{opacity:1;filter:blur(0);transform:translateY(0)}}
 @keyframes copy-enter{to{opacity:1;transform:translateY(0)}}
