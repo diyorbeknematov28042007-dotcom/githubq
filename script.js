@@ -1,6 +1,7 @@
 const menuButton = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
 const modal = document.querySelector('#video-modal');
+const siteShell = document.querySelector('.site-shell');
 const video = modal.querySelector('video');
 const closeButton = modal.querySelector('.video-close');
 let previousFocus = null;
@@ -32,6 +33,7 @@ function closeVideo() {
   modal.classList.remove('is-open');
   modal.setAttribute('aria-hidden', 'true');
   modal.inert = true;
+  siteShell.inert = false;
   document.body.style.overflow = '';
   previousFocus?.focus();
 }
@@ -40,6 +42,7 @@ document.querySelector('[data-open-video]').addEventListener('click', (event) =>
   previousFocus = event.currentTarget;
   closeMenu();
   modal.inert = false;
+  siteShell.inert = true;
   modal.setAttribute('aria-hidden', 'false');
   modal.classList.add('is-open');
   document.body.style.overflow = 'hidden';
