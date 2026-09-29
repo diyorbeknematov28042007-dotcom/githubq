@@ -14,4 +14,4 @@ python3 -m http.server 3000
 
 GitHub reposini Vercel’ga import qiling. Framework Preset: **Other**, Root Directory: **/**, Build Command: bo‘sh, Output Directory: bo‘sh. Deploy qiling. Ulanmalar `https://yuristim.pp.ua`, `https://xizmatlar.yuristim.pp.ua` va `https://t.me/Yuristim_bot` ga yo‘naltirilgan.
 
-`assets/hero.webp` foydalanuvchi yuborgan videodagi sahnadan kelib chiqib, matn va UI olib tashlangan rasm. `assets/reference.mp4` “Videoni tomosha” modalida ochiladigan asl referens video.
+`assets/background.mp4` asl videoning harakatlanuvchi sahnasidan tayyorlangan toza fon: ustidagi eski UI yozuvlari olib tashlangan. `assets/hero.webp` video ochilguncha poster va `prefers-reduced-motion` uchun statik fon. `assets/reference.mp4` “Videoni tomosha” modalida ochiladigan asl referens video.

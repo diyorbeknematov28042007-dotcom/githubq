@@ -3,6 +3,7 @@ const mobileNav = document.querySelector('.mobile-nav');
 const modal = document.querySelector('#video-modal');
 const siteShell = document.querySelector('.site-shell');
 const video = modal.querySelector('video');
+const heroVideo = document.querySelector('.hero-video');
 const closeButton = modal.querySelector('.video-close');
 let previousFocus = null;
 
@@ -59,3 +60,12 @@ document.addEventListener('keydown', (event) => {
   closeMenu();
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function syncHeroVideo() {
+  if (document.hidden || reducedMotion.matches) heroVideo.pause();
+  else heroVideo.play().catch(() => {});
+}
+document.addEventListener('visibilitychange', syncHeroVideo);
+reducedMotion.addEventListener('change', syncHeroVideo);
+syncHeroVideo();

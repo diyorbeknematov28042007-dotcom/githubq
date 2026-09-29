@@ -16,3 +16,27 @@
 @media (max-width:380px){.hero-content{padding-inline:18px}.hero h1{font-size:10vw}.hero-actions{gap:10px}.action-divider{display:none}.watch-button{margin-left:3px}.hero-bottom{left:18px;right:18px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 @keyframes scene-drift-mobile{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.09) translate3d(-1%,0,0)}}
+
+/* The clean plate stays visible until the actual moving footage can play. */
+.hero-art{inset:0;overflow:hidden;animation:none;will-change:auto}
+.hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
+.hero h1,.hero-description,.hero-cards{animation:none}
+.title-line{display:block;overflow:hidden;white-space:nowrap;padding-bottom:.09em;margin-bottom:-.09em}
+.hero h1 .title-ink{display:inline-block;color:var(--cream);opacity:0;filter:blur(6px);transform:translateY(110%);animation:title-enter .9s cubic-bezier(.18,.7,.2,1) forwards}
+.hero h1 .title-line:nth-child(1) .title-ink{animation-delay:.25s}
+.hero h1 .title-line:nth-child(2) .title-ink{animation-delay:.42s}
+.hero h1 .title-line:nth-child(3) .title-ink{animation-delay:.59s}
+.hero h1 .title-ink.title-gold{color:#d3ad78;background:linear-gradient(105deg,#bd925a 8%,#f9e3b8 28%,#c89c61 48%,#e6c592 75%,#bc8e54 95%);background-size:210% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:title-enter .9s cubic-bezier(.18,.7,.2,1) .42s forwards,gold-shimmer 8s ease-in-out 1.5s infinite alternate}
+.hero h1 .title-line:nth-child(2) .title-ink.title-gold{animation-delay:.42s,1.5s}
+.hero-description span{display:inline-block;opacity:0;transform:translateY(10px);animation:copy-enter .65s ease-out forwards}
+.hero-description span:nth-child(1){animation-delay:.84s}.hero-description span:nth-child(2){animation-delay:.98s}.hero-description span:nth-child(3){animation-delay:1.12s}
+.hero-actions{animation-delay:1.16s;animation-duration:.7s}
+.hero-card{opacity:0;animation:card-enter .75s cubic-bezier(.18,.7,.2,1) forwards}
+.hero-card:nth-child(1){animation-delay:1.34s}.hero-card:nth-child(2){animation-delay:1.48s}.hero-card:nth-child(3){animation-delay:1.62s}
+.hero-bottom{animation:copy-enter .8s ease-out 1.85s both}
+@keyframes title-enter{to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes copy-enter{to{opacity:1;transform:translateY(0)}}
+@keyframes card-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gold-shimmer{from{background-position:0 50%}to{background-position:100% 50%}}
+@media (max-width:740px){.hero-art{inset:0;animation:none}.hero-video{object-position:61% center}.hero h1 .title-gold{font-size:clamp(29px,8.8vw,1em)}}
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}.hero h1 .title-ink,.hero-description span,.hero-card{opacity:1;filter:none;transform:none;animation:none!important}.hero-bottom{animation:none}}
